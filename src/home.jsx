@@ -52,7 +52,7 @@ export default function Home () {
                   Any Environment
                 </h2>
                 <div className="home-btns">
-                  <a href="shop.html" className="explore-btn btn">Explore</a>
+                  <a href="shop" className="explore-btn btn">Explore</a>
                 </div>
               </div>
               {/* Home Image */}
