@@ -1,5 +1,6 @@
 import React from 'react'
 import Resizable from './carousel';
+import { Link } from 'react-router-dom';
 
 export default function Home () {
   const settings = {
