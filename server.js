@@ -1,29 +1,31 @@
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
-const path = require("path");
+const path = require('path');
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-const PORT = 7000;
+const PORT = 8080;
 
-// looking into express static and static files
-// app.use("/photos",express.static("./public/photos"))
-// app.use(express.static("./build"))
+// Enable CORS for all routes
+// app.use(cors({
+//   origin: 'http://localhost:3000', 
+//   methods: ['GET', 'POST']
+// }));
 
-
-// look into univeral * for routing
-// app.get("*", (req, res) => {
-//     res.sendFile(path.join(__dirname, "build", "index.html"))
-// })
 
 const db = mysql.createConnection({
     host: 'sql5.freesqldatabase.com',
-    user: 'sql5719792',
-    password: 'yJuaX1X2lG',
-    database: 'sql5719792'
+    user: 'sql5721523',
+    password: 'QImYfiAGmF',
+    database: 'sql5721523'
 });
+    // host: 'sql5.freesqldatabase.com',
+    // user: 'sql5721523',
+    // password: 'yQImYfiAGmF',
+    // database: 'sql5721523'
+
 
 db.connect((err) => {
     if (err) {
@@ -35,20 +37,30 @@ db.connect((err) => {
 
 app.use(express.static(path.join(__dirname, 'build')))
 
+app.get('/', (req,res) => {
+    console.log('Yo');
+    return res.json('yoo');
+    
+})
+
 // My Endpoint to fetch all my products
-app.get('/products', (req, res) => {
-    const sql = 'SELECT * FROM products';
+app.get('/shop', (req, res) => {
+    console.log('inside product server')
+    const sql = 'SELECT * FROM Products';
     db.query(sql, (err, results) => {
         if (err) {
             return res.status(500).send(err);
         }
         res.json(results);
+        console.log('ye');
+        console.log(results);
     });
 });
 
 app.listen(PORT, () => {
-    console.log('Server is listening on port 7000');
+    console.log(`server is listening on port ${PORT}`);
 });
+
 // const express = require('express');
 // const mysql = require('mysql2');
 // const cors = require('cors');

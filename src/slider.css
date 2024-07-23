@@ -1,0 +1,23 @@
+.swiper-wrapper {
+ width: 800px;
+ margin-bottom: 3rem;
+}
+
+.swiper-pagination-bullet {
+    width: 32px;
+    height: 2px;
+    background: black;
+    border-radius: 0.5rem;
+}
+
+.swiper-button-next {
+    color: black;
+    margin-left: 4px;
+}
+
+.swiper-button-prev {
+    color: black;
+    margin-right: 4px;
+}
+
+

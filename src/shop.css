@@ -1,52 +1,121 @@
-body {
+/* Ensure the styles are scoped to the Shop component */
+.shop-main {
+  padding: 20px;
   background-color: #fdf5f0;
 }
 
 #product-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 40px;
-    margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
+  margin-top: 20px;
 }
-  
-  
- 
-  .product-item {
-    width: 100%; 
-    border: 1px solid whitesmoke; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px; 
-    margin: 10px;
-  }
-  
-  
-  
-  
-  .product-image {
-    width: 100px; 
-    height: auto; 
-    margin-right: 10px;
-  }
-  
-  .product-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; 
-    align-items: center;
-  }
-  
-  .product-name {
-    font-weight: bold;
-  }
-  
-  .product-price {
-    color: green;
-  }
-  
-  .product-description {
-    color: #333;
-  }
 
+.product-item {
+  width: 100%; 
+  border: 1px solid whitesmoke; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px; 
+  margin: 10px;
+}
+
+.product-image {
+  width: 300px; /* Adjust this value as needed */
+  height: auto; 
+  margin-bottom: 20px; /* Add some margin at the bottom for spacing */
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  align-items: center;
+}
+
+.product-name {
+  font-weight: bold;
+}
+
+.product-price {
+  color: green;
+}
+
+.product-description {
+  color: #333;
+}
+
+.filters {
+  margin-bottom: 20px;
+}
+
+.filters select, .filters input {
+  margin-right: 10px;
+  padding: 5px;
+}
+
+.quiz-section {
+  position: relative;
+  text-align: center;
+  color: white;
+  background-image: url('/public/skincare.jpg'); 
+  background-size: cover;
+  background-position: center;
+  padding: 50px 20px;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 600px; 
+}
+
+.quiz-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.quiz-content {
+  position: relative;
+  z-index: 2;
+}
+
+.quiz-content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.quiz-content p {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.quiz-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #000; /* Button background color */
+  color: #fff; /* Button text color */
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 30px; /* Rounded corners for the button */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.quiz-button:hover {
+  background-color: #333; /* Darker shade on hover */
+}
+
+.quiz-image {
+  margin-top: 20px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
 
 .testimonial-section {
   background-color: #f8f8f8;
@@ -67,4 +136,44 @@ body {
 }
 
 
-  
+.quiz-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #000; /* Button background color */
+  color: #fff; /* Button text color */
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 30px; /* Rounded corners for the button */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.quiz-button:hover {
+  background-color: #333; /* Darker shade on hover */
+}
+
+.quiz-image {
+  margin-top: 20px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.testimonial-section {
+  background-color: #f8f8f8;
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px; 
+}
+
+.rating {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.testimonial-text {
+  font-style: italic;
+  color: #666;
+  font-size: 40px;
+}
+
+

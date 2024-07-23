@@ -32,7 +32,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Raleway:wght@400;500;600;700&family=Roboto+Slab:wght@400;500;600;700&display=swap");
 /* Variables */
 :root {
-  --main-color: #edd4c6;
+  /* --main-color: #edd4c6; */
   --text-color: #121212;
   --container-color: #fdf5f0;
   --bg-color: #fff;
@@ -41,6 +41,7 @@
   --font-family-1: "Raleway", sans-serif;
   --font-family-2: "Roboto Slab", serif;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -102,20 +103,24 @@ header.shadow {
   letter-spacing: 1px;
   color: var(--text-color);
 }
+/* Navbar */
 .navbar {
   display: flex;
   align-items: center;
   column-gap: 1.5rem;
 }
-.nav-link {
+
+.navbar-link {
   position: relative;
-  font-size: 0.9rem;
+  font-size: 1rem; /* Adjust font size as needed */
   font-weight: 500;
   color: var(--text-color);
   font-family: var(--poppins-font);
+  text-decoration: none; /* Remove underline from links */
   transition: 0.3s all cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-.nav-link::after {
+
+.navbar-link::after {
   content: "";
   position: absolute;
   bottom: -2px;
@@ -125,10 +130,13 @@ header.shadow {
   background: var(--text-color);
   transition: 0.3s all cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-.nav-link:hover.nav-link::after {
+
+.navbar-link:hover::after {
   width: 100%;
   transition: 0.3s all cubic-bezier(0.075, 0.82, 0.165, 1);
 }
+
+/* Menu Icon */
 .menu-icon {
   display: none;
   flex-direction: column;
@@ -139,6 +147,7 @@ header.shadow {
   z-index: 200;
   transition: 0.3s;
 }
+
 .menu-icon div {
   display: block;
   background: var(--text-color);
@@ -146,16 +155,84 @@ header.shadow {
   width: 25px;
   transition: 0.3s;
 }
-.move .line1 {
+
+.menu-icon.move .line1 {
   transform: rotate(-45deg) translate(-5px, 5px);
 }
-.move .line2 {
+
+.menu-icon.move .line2 {
   opacity: 0;
 }
-.move .line3 {
+
+.menu-icon.move .line3 {
   transform: rotate(45deg) translate(-5px, -5px);
 }
-/* Btn */
+
+/* Footer */
+.footer {
+  background-color: #f8f9fa; /* Example background color */
+  padding: 2rem 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-box {
+  flex: 1;
+  padding: 0 1rem;
+}
+
+.footer-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-form-label {
+  margin-bottom: 0.5rem;
+}
+
+.footer-form-input {
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-form-button {
+  padding: 0.5rem;
+  background-color: var(--primary-color); /* Define primary color in your CSS variables */
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-column {
+  flex: 1;
+  padding: 0 1rem;
+}
+
+.footer-link {
+  display: block;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.footer-copyright {
+  text-align: center;
+  padding: 1rem 0;
+  background-color: #e9ecef; /* Example background color */
+}
+
 
 
 .btn {
@@ -173,15 +250,17 @@ header.shadow {
 .home {
   min-height: 640px;
   background: var(--container-color);
+  display: flex; 
+  align-items: center;
+  padding: 0px 28px;
+  justify-content: space-between;
 }
 .home-img {
   display: none;
 }
 .home-data {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 .home-text {
   display: flex;
@@ -213,9 +292,8 @@ header.shadow {
 }
 .home-bg {
   position: relative;
-  width: 500px;
-  height: 500px;
-  bottom: -140px;
+  /* width: 500px;
+  height: 500px; */
   z-index: 2;
 }
 .home-bg img {
@@ -239,19 +317,7 @@ header.shadow {
   display: inline-block;
   margin-top: 1.5rem;
 }
-.contact-info-box {
-  display: inline-flex;
-  align-items: center;
-  column-gap: 0.5rem;
-  margin-right: 1rem;
-  margin-bottom: 1rem;
-}
-.contact-info-box .bx {
-  font-size: 1.3rem;
-}
-.contact-info-box span {
-  font-size: 0.875rem;
-}
+
 /* About */
 .about-text {
   text-align: center;
@@ -375,58 +441,83 @@ header.shadow {
 
 
 /* Footer */
+/* Footer */
+/* Footer */
+/* Footer */
+/* Footer */
+/* Footer */
+/* Footer */
+/* Footer */
 .footer {
   background: var(--text-alter-color);
   color: #f6f6f6;
-  border-top: 2px solid #d1a670;
+  padding: 2rem 0;
 }
 .footer-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
-.footer-container .logo {
-  color: var(--bg-color);
-  margin-bottom: 1rem;
+.footer-box {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 0 1.5rem; /* Adjusted margin for more spacing */
 }
-.footer-container .logo:hover {
-  color: var(--bg-color);
+.footer-box h3 {
+  font-size: 1.75rem; /* Increased font size */
+  margin-bottom: 1.5rem; /* Increased spacing */
 }
-.footer-container .footer-box {
+.footer-form {
   display: flex;
   flex-direction: column;
 }
-.social {
-  display: flex;
-  align-items: center;
+.footer-form-label {
+  font-size: 1.25rem; /* Increased font size */
+  margin-bottom: 1rem; /* Increased spacing */
 }
-.social a {
-  font-size: 24px;
-  color: var(--bg-color);
-  margin-right: 1rem;
+.footer-form-input {
+  padding: 0.75rem; /* Increased padding */
+  margin-bottom: 1.5rem; /* Increased spacing */
+  font-size: 1.25rem; /* Increased font size */
 }
-.social a:hover {
-  color: #d1a670;
+.footer-form-button {
+  padding: 0.75rem;
+  background-color: #d1a670;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1.25rem; /* Increased font size */
 }
-.footer-box h3 {
-  font-size: 1.1rem;
-  font-weight: 400;
-  margin-bottom: 1rem;
+.footer-form-button:hover {
+  background-color: #b68d58;
 }
-.footer-box a,
 .footer-box p {
-  color: #818181;
-  margin-bottom: 10px;
-}
-.footer-box a:hover {
-  color: #d1a670;
-}
-.copyright {
-  padding: 20px;
-  text-align: center;
+  margin-top: 1.5rem; /* Increased spacing */
+  font-size: 1.1rem; /* Increased font size */
   color: var(--bg-color);
-  background: var(--text-alter-color);
 }
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  flex: 2;
+}
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1.5rem; /* Adjusted margin for more spacing */
+}
+.footer-link {
+  color: var(--bg-color);
+  text-decoration: none;
+  font-size: 1.25rem; /* Increased font size */
+  margin-bottom: 1rem; /* Increased spacing */
+}
+
+
+
+
+
 .loader {
   position: fixed;
   top: 0;
@@ -441,6 +532,9 @@ header.shadow {
 .loader img {
   width: 120px;
 }
+
+
+
 /* Making Responsive */
 @media (max-width: 985px) {
   .container {
@@ -497,6 +591,9 @@ header.shadow {
   }
   .home-bg {
     display: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10%;
   }
   .home-data {
     grid-template-columns: 1fr;
@@ -677,41 +774,6 @@ header.shadow {
   height: auto;
 }
 
-.form-group {
-  margin-bottom: 20px;
-  border: 5px solid #ccc; /* Add border around each form group */
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Add box shadow effect */
-  padding: 15px; /* Add padding inside each form group for spacing */
-  background-color: rgba(255, 255, 255, 0.8); /* Set an opaque white background color */
-  width: 50%;
-}
-
-
-input[type="text"],
-input[type="email"],
-textarea {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  box-sizing: border-box;
-
-}
-
-button[type="submit"] {
-  padding: 10px 20px;
-  background-color: #007bff; /* Set button background color */
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s; /* Add transition for hover effect */
-
-}
-
-button[type="submit"]:hover {
-  background-color: #0056b3; /* Change background color on hover */
-}
-
 .footer {
   background: var(--text-alter-color);
   color: #f6f6f6;
@@ -765,21 +827,5 @@ button[type="submit"]:hover {
   background: var(--text-alter-color);
 }
 
-.contactUs {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Full viewport height */
-  margin: 0;
-}
 
-/* Center the form elements within the form */
-.contactUs .form-group {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 15px; /* Add some spacing between form groups */
-}
 

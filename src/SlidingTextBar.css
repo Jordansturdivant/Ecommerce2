@@ -1,0 +1,29 @@
+/* Container for the sliding text bar */
+.marquee {
+    overflow: hidden; /* Hide text that moves outside the container */
+    position: relative;
+    background: #f9f8f7; /* Background color */
+    height: 50px; /* Height of the marquee */
+    line-height: 50px; /* Align text vertically */
+    border: 1px solid #ccc; /* Optional border */
+    display: flex;
+    align-items: center; /* Vertically center the text */
+  }
+  
+  /* Styles for the scrolling text */
+  .marquee-text {
+    position: absolute;
+    white-space: nowrap; /* Prevent text from wrapping */
+    animation: marquee 10s linear infinite; /* Animation settings */
+  }
+  
+  /* Keyframes for the scrolling effect */
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%); /* Start from right edge */
+    }
+    100% {
+      transform: translateX(-100%); /* Move to left edge */
+    }
+  }
+  

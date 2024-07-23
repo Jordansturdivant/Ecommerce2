@@ -1,117 +1,77 @@
-body {
-    background-image: url('/src/photos/coBG.jpg');
-    background-size: cover; /* Resize the background image to cover the entire page */
-    background-repeat: no-repeat; /* Prevent the background image from repeating */
-    background-attachment: fixed; /* Fix the background image in place while scrolling */
-  }
-  
-
-  .form-group {
-    margin-bottom: 20px;
-    border: 5px solid #ccc; /* Add border around each form group */
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Add box shadow effect */
-    padding: 15px; /* Add padding inside each form group for spacing */
-    background-color: rgba(255, 255, 255, 0.8); /* Set an opaque white background color */
-    width: 50%;
+/* Contact Page Styles */
+.contact-page {
+  background-image: url('./coBG.jpg');
+  background-size: cover; /* Resize the background image to cover the entire page */
+  background-repeat: no-repeat; /* Prevent the background image from repeating */
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ensures the background covers the full viewport height */
+  margin: 0;
 }
 
-  
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
+/* Contact Us Section Styles */
+.contactUs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
 
-  }
-  
-  button[type="submit"] {
-    padding: 10px 20px;
-    background-color: #007bff; /* Set button background color */
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s; /* Add transition for hover effect */
-  
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #0056b3; /* Change background color on hover */
-  }
+/* Form Group Styles */
+.form-group {
+  width: 100%; /* Full width within the parent container */
+  max-width: 800px; /* Adjust based on desired width */
+  margin-bottom: 30px; /* Increased margin for better spacing */
+  padding: 20px; /* Increased padding for more space inside */
+  border: 5px solid #ccc;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.8);
+  box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
 
-  .footer {
-    background: var(--text-alter-color);
-    color: #f6f6f6;
-    border-top: 2px solid #d1a670;
-  }
-  .footer-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-  }
-  .footer-container .logo {
-    color: var(--bg-color);
-    margin-bottom: 1rem;
-  }
-  .footer-container .logo:hover {
-    color: var(--bg-color);
-  }
-  .footer-container .footer-box {
-    display: flex;
-    flex-direction: column;
-  }
-  .social {
-    display: flex;
-    align-items: center;
-  }
-  .social a {
-    font-size: 24px;
-    color: var(--bg-color);
-    margin-right: 1rem;
-  }
-  .social a:hover {
-    color: #d1a670;
-  }
-  .footer-box h3 {
-    font-size: 1.1rem;
-    font-weight: 400;
-    margin-bottom: 1rem;
-  }
-  .footer-box a,
-  .footer-box p {
-    color: #818181;
-    margin-bottom: 10px;
-  }
-  .footer-box a:hover {
-    color: #d1a670;
-  }
-  .copyright {
-    padding: 20px;
-    text-align: center;
-    color: var(--bg-color);
-    background: var(--text-alter-color);
-  }
+/* Form Input and Textarea Styles */
+.contact-page input[type="text"],
+.contact-page input[type="email"],
+.contact-page textarea {
+  width: calc(100% - 20px); /* Full width minus padding */
+  padding: 15px; /* Increased padding for more space inside */
+  margin-top: 5px;
+  margin-bottom: 10px;
+  box-sizing: border-box; /* Ensures padding and border are included in the width */
+  height: 50px; /* Adjust the height for longer form boxes */
+}
 
-  .contactUs {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full viewport height */
-    margin: 0;
-  }
-  
-  
-  .contactUs .form-group {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-  
+/* Textarea Specific Styles */
+.contact-page textarea {
+  height: 150px; /* Set a specific height for the textarea */
+}
 
- 
-  
+/* Submit Button Styles */
+.contact-page button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #fdf5f0;
+  color: rgb(4, 1, 1);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-page button[type="submit"]:hover {
+  background-color: #b37700;
+}
+
+/* Error Message Styles */
+.error {
+  color: red;
+  font-size: 0.875em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-group {
+    max-width: 100%; /* Full width on smaller screens */
+  }
+}
+
