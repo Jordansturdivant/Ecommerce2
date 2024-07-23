@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.69b46316.css",
-    "main.js": "/static/js/main.d60d14d3.js",
+    "main.js": "/static/js/main.0e6ff85c.js",
     "static/js/453.2d40735f.chunk.js": "/static/js/453.2d40735f.chunk.js",
     "static/media/skincare.jpg": "/static/media/skincare.d772a2dd028d8d1b328f.jpg",
     "static/media/coBG.jpg": "/static/media/coBG.a89b151fedb08673e77c.jpg",
     "index.html": "/index.html",
     "main.69b46316.css.map": "/static/css/main.69b46316.css.map",
-    "main.d60d14d3.js.map": "/static/js/main.d60d14d3.js.map",
+    "main.0e6ff85c.js.map": "/static/js/main.0e6ff85c.js.map",
     "453.2d40735f.chunk.js.map": "/static/js/453.2d40735f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.69b46316.css",
-    "static/js/main.d60d14d3.js"
+    "static/js/main.0e6ff85c.js"
   ]
 }

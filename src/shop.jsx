@@ -7,7 +7,7 @@ export const Shop = () => {
   const [priceFilter, setPriceFilter] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:8080/Shop')
+    fetch('http://localhost:8080/shop')
       .then(response => response.json())
       .then(data => {
         console.log('Fetched products:', data); // Log the data
