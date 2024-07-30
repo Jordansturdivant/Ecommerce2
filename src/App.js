@@ -2,10 +2,11 @@ import React from 'react';
 import Home from './home';
 import ContactUs from './contact';
 import Shop from './shop';
-import SlidingTextBar from './SlidingTextBar'; // Import the SlidingTextBar component
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import SlidingTextBar from './SlidingTextBar'; 
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; //allows specific parts of page to reload
 import './App.css';
 
+//main component for setting up structure and routing 
 function App() {
   return (
     <>

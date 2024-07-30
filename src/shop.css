@@ -1,9 +1,9 @@
-/* Ensure the styles are scoped to the Shop component */
 .shop-main {
   padding: 20px;
   background-color: #fdf5f0;
 }
 
+/* Product container for desktop, tablet, and mobile */
 #product-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -11,6 +11,21 @@
   margin-top: 20px;
 }
 
+/* Adjust the layout for tablets */
+@media (max-width: 1024px) {
+  #product-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Adjust the layout for mobile devices */
+@media (max-width: 768px) {
+  #product-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Product item styling */
 .product-item {
   width: 100%; 
   border: 1px solid whitesmoke; 
@@ -19,12 +34,14 @@
   margin: 10px;
 }
 
+/* Product image styling */
 .product-image {
-  width: 300px; /* Adjust this value as needed */
+  width: 100%; /* Ensure it scales with the container */
   height: auto; 
-  margin-bottom: 20px; /* Add some margin at the bottom for spacing */
+  margin-bottom: 20px;
 }
 
+/* Product details styling */
 .product-details {
   display: flex;
   flex-direction: column;
@@ -44,6 +61,7 @@
   color: #333;
 }
 
+/* Filter section styling */
 .filters {
   margin-bottom: 20px;
 }
@@ -53,6 +71,7 @@
   padding: 5px;
 }
 
+/* Quiz section styling */
 .quiz-section {
   position: relative;
   text-align: center;
@@ -63,7 +82,7 @@
   padding: 50px 20px;
   border-radius: 10px;
   margin: 20px auto;
-  max-width: 600px; 
+  max-width: 600px;
 }
 
 .quiz-section::before {
@@ -117,6 +136,7 @@
   border-radius: 10px;
 }
 
+/* Testimonial section styling */
 .testimonial-section {
   background-color: #f8f8f8;
   padding: 20px;
@@ -135,45 +155,24 @@
   font-size: 40px;
 }
 
+/* Adjust font sizes for smaller screens */
+@media (max-width: 768px) {
+  .quiz-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .quiz-content p {
+    font-size: 0.9rem;
+  }
+  
+  .quiz-button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
 
-.quiz-button {
-  display: inline-block;
-  padding: 15px 30px;
-  background-color: #000; /* Button background color */
-  color: #fff; /* Button text color */
-  text-decoration: none;
-  font-size: 1.2rem;
-  border-radius: 30px; /* Rounded corners for the button */
-  transition: background-color 0.3s ease; /* Smooth transition */
-}
-
-.quiz-button:hover {
-  background-color: #333; /* Darker shade on hover */
-}
-
-.quiz-image {
-  margin-top: 20px;
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-.testimonial-section {
-  background-color: #f8f8f8;
-  padding: 20px;
-  text-align: center;
-  margin-top: 20px; 
-}
-
-.rating {
-  font-size: 40px;
-  margin-bottom: 10px;
-}
-
-.testimonial-text {
-  font-style: italic;
-  color: #666;
-  font-size: 40px;
+  .rating, .testimonial-text {
+    font-size: 30px;
+  }
 }
 
 

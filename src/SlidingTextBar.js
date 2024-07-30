@@ -1,5 +1,5 @@
 import React from 'react';
-import './SlidingTextBar.css'; // Import the CSS file
+import './SlidingTextBar.css'; 
 
 const SlidingTextBar = () => {
   return (

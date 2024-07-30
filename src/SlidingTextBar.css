@@ -3,27 +3,27 @@
     overflow: hidden; /* Hide text that moves outside the container */
     position: relative;
     background: #f9f8f7; /* Background color */
-    height: 50px; /* Height of the marquee */
-    line-height: 50px; /* Align text vertically */
-    border: 1px solid #ccc; /* Optional border */
+    height: 50px; 
+    line-height: 50px; 
+    border: 1px solid #ccc; 
     display: flex;
-    align-items: center; /* Vertically center the text */
+    align-items: center; 
   }
   
   /* Styles for the scrolling text */
   .marquee-text {
     position: absolute;
-    white-space: nowrap; /* Prevent text from wrapping */
-    animation: marquee 10s linear infinite; /* Animation settings */
+    white-space: nowrap; 
+    animation: marquee 10s linear infinite; 
   }
   
   /* Keyframes for the scrolling effect */
   @keyframes marquee {
     0% {
-      transform: translateX(100%); /* Start from right edge */
+      transform: translateX(100%); 
     }
     100% {
-      transform: translateX(-100%); /* Move to left edge */
+      transform: translateX(-100%); 
     }
   }
   

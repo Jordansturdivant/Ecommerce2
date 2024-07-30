@@ -1,3 +1,4 @@
+//imports and setup
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
@@ -8,12 +9,6 @@ app.use(express.json());
 
 const PORT = 8080;
 
-// Enable CORS for all routes
-// app.use(cors({
-//   origin: 'http://localhost:3000', 
-//   methods: ['GET', 'POST']
-// }));
-
 
 const db = mysql.createConnection({
     host: 'sql5.freesqldatabase.com',
@@ -21,11 +16,7 @@ const db = mysql.createConnection({
     password: 'QImYfiAGmF',
     database: 'sql5721523'
 });
-    // host: 'sql5.freesqldatabase.com',
-    // user: 'sql5721523',
-    // password: 'yQImYfiAGmF',
-    // database: 'sql5721523'
-
+  
 
 db.connect((err) => {
     if (err) {
@@ -35,8 +26,9 @@ db.connect((err) => {
     console.log('Connected to database.');
 });
 
-app.use(express.static(path.join(__dirname, 'build')))
+app.use(express.static(path.join(__dirname, 'build'))) //serves static files from build directory
 
+//route testing to ensure my server was running
 app.get('/', (req,res) => {
     console.log('Yo');
     return res.json('yoo');
@@ -61,24 +53,5 @@ app.listen(PORT, () => {
     console.log(`server is listening on port ${PORT}`);
 });
 
-// const express = require('express');
-// const mysql = require('mysql2');
-// const cors = require('cors');
-
-// const app = express();
-// app.use(cors());
-// app.use(express.json());
-
-// const db = mysql.createConnection({
-//     host: 'sql5.freesqldatabase.com',
-//     user: 'sql5719792',
-//     password: 'yJuaX1X2lG',
-//     database: 'sql5719792'
-
-// })
-
-// app.listen(7000, () => {
-//     console.log('Server is listening on port 7000');
-// });
 
 

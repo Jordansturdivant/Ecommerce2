@@ -2,16 +2,17 @@ import React, { useState, useEffect } from 'react';
 import './shop.css';
 
 export const Shop = () => {
-  const [products, setProducts] = useState([]);
-  const [typeFilter, setTypeFilter] = useState('');
+  const [products, setProducts] = useState([]); //This state holds the list of products fetched from my server.
+  const [typeFilter, setTypeFilter] = useState(''); 
   const [priceFilter, setPriceFilter] = useState('');
 
+  //fetches my data from my endpoint 
   useEffect(() => {
     fetch('http://localhost:8080/shop')
-      .then(response => response.json())
+      .then(response => response.json()) //held in json format 
       .then(data => {
         console.log('Fetched products:', data); // Log the data
-        if (Array.isArray(data)) {
+        if (Array.isArray(data)) {  //condition to set products to product state if the data is an array
           setProducts(data);
         } else {
           console.error('Fetched data is not an array:', data);
@@ -20,22 +21,24 @@ export const Shop = () => {
       .catch(error => console.error('Error fetching products:', error));
   }, []);
 
-  const filteredProducts = Array.isArray(products) ? products.filter(product => {
+  //A product must meet both the type and price filter criteria to be included in filteredProducts. If a filter is not applied (empty string), it does not restrict the products based on that filter.
+  const filteredProducts = Array.isArray(products) ? products.filter(product => { //Will filter over each product product in the products array, applying the filter conditions
     return (
-      (typeFilter === '' || product.Type === typeFilter) &&
+      (typeFilter === '' || product.Type === typeFilter) && //Checks if the TF is empty or if the PT  matches the TF. If either condition is true, the product passes this filter
       (priceFilter === '' || 
         (priceFilter === 'low' && product.Price < 30) ||
         (priceFilter === 'mid' && product.Price >= 30 && product.Price <= 50) ||
         (priceFilter === 'high' && product.Price > 50))
     );
   }) : [];
-
+ 
+  //The onChange event handlers update the state when a user selects an option, triggering a re-render of the filtered product list.
   return (
     <main className="shop-main">
       <div className="filters">
         <label>
           Filter by type:
-          <select value={typeFilter} onChange={(e) => setTypeFilter(e.target.value)}>
+          <select value={typeFilter} onChange={(e) => setTypeFilter(e.target.value)}> 
             <option value="">All</option>
             <option value="Skin">Skin</option>
             <option value="Face">Face</option>

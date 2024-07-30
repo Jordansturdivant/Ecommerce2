@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import './form.css'; 
 
+// initialized two pieces of state: formData for the form inputs and errors for any validation errors
 export default function ContactUs() {
   const [formData, setFormData] = useState({
-    name: '',
+    name: '',   // I set the values to empty strings to ensure that the form fields start as blank when the component is first rendered.
     email: '',
     message: ''
   });
@@ -14,9 +15,10 @@ export default function ContactUs() {
     message: ''
   });
 
+  
   const validateForm = () => {
     const { name, email, message } = formData;
-    let isValid = true;
+    let isValid = true; //The boolean i created tracks whether the form is valid. It starts as true and is set to false if any validation errors are found
     const newErrors = { name: '', email: '', message: '' };
 
     if (!name) {
@@ -48,10 +50,10 @@ export default function ContactUs() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    if (validateForm()) {
+    e.preventDefault(); //stops the default form submission
+    if (validateForm()) {  //Ensures that the form data meets validation criteria before proceeding
       console.log('Form submitted', formData);
-      // Handle form submission logic here
+      
     }
   };
 
